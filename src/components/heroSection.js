@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
-import pattern from "../assets/images/background.png";
+// import pattern from "../assets/images/background.png";
 import { rem } from "../helpers/mixins";
 import { Link } from "react-scroll";
 
@@ -8,9 +8,25 @@ import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { pageAnimation, slideIn, titleAnim } from "../animations/animation";
 
-const heroSection = () => {
+//react intersection observer
+import { UseScroll } from "./useScroll";
+
+const HeroSection = ({ homeStatus, setHomeStatus }) => {
+  //intersection api
+  const [element, controls, view] = UseScroll();
+
+  //setting homeStatus
+  useEffect(() => {
+    setHomeStatus(view);
+    console.log(homeStatus);
+  });
   return (
-    <StyledHero variants={pageAnimation} initial="hidden" animate="show">
+    <StyledHero
+      variants={pageAnimation}
+      ref={element}
+      animate={controls}
+      id="heroSection"
+    >
       {/* <img src={pattern} alt="pattern" /> */}
       <div className="details">
         <div className="title">
@@ -91,4 +107,4 @@ const StyledHero = styled(motion.section)`
   }
 `;
 
-export default heroSection;
+export default HeroSection;

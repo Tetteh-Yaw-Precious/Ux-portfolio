@@ -4,11 +4,11 @@ import { device, rem } from "../helpers/mixins";
 //Declaring global styles for all styles in apoplication
 const Globalstyles = createGlobalStyle`
 :root{
-    --accent-color: hsla(231, 91%, 21%, 1);
+    --accent-color: #01AC6C;
     --primary-font:'Montserrat', sans-serif;
     --secondary-font:'Oxygen', sans-serif;
     --text-black: #151211;
-    --case-study-link-color:hsla(231, 6%, 37%, 1);
+    --case-study-link-color: hsla(231, 6%, 37%, 1);
 
 }
 * {

@@ -6,9 +6,19 @@ import { rem } from "../helpers/mixins";
 //importing Framer motion
 import { motion } from "framer-motion";
 
-const navLinks = () => {
+const navLinks = ({ workStatus, homeStatus }) => {
   return (
     <NavWrapper>
+      <li>
+        <Link activeClass="active" to="heroSection" spy={true} smooth={true}>
+          Home
+        </Link>
+        <Line
+          transition={{ duration: 0.75 }}
+          initial={{ width: "10%" }}
+          animate={{ width: homeStatus === true ? "100%" : "0%" }}
+        />
+      </li>
       <li>
         <Link activeClass="active" to="projects" spy={true} smooth={true}>
           Work
@@ -16,7 +26,7 @@ const navLinks = () => {
         <Line
           transition={{ duration: 0.75 }}
           initial={{ width: "0%" }}
-          animate={{ width: "100%" }}
+          animate={{ width: workStatus === true ? "100%" : "0%" }}
         />
       </li>
       <li>
@@ -47,9 +57,6 @@ const NavWrapper = styled.ul`
     position: relative;
     :last-child {
       color: var(--accent-color) !important;
-    }
-    .active {
-      border: 1px solid green;
     }
   }
 `;

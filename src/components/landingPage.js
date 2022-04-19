@@ -5,11 +5,11 @@ import styled from "styled-components";
 import Navbar from "./nav";
 import HeroSection from "./heroSection";
 
-const landingPage = () => {
+const landingPage = ({workStatus,homeStatus,setHomeStatus}) => {
   return (
     <StyledLandingPage>
-      <Navbar />
-      <HeroSection />
+      <Navbar workStatus={workStatus} homeStatus={homeStatus}/>
+      <HeroSection homeStatus={homeStatus} setHomeStatus={setHomeStatus} />
     </StyledLandingPage>
   );
 };

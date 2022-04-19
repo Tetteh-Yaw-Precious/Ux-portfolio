@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-// import pattern from "../assets/images/background.png";
+import pattern from "../assets/images/background.png";
 import { rem } from "../helpers/mixins";
 import { Link } from "react-scroll";
 
@@ -46,7 +46,9 @@ const HeroSection = ({ homeStatus, setHomeStatus }) => {
             considered outcomes that breathe life into product.
           </motion.p>
           <motion.button variants={slideIn}>
-            <Link>my projects</Link>
+            <Link to="projects" spy={true} smooth={true}>
+              my projects
+            </Link>
           </motion.button>
         </div>
       </div>
@@ -55,16 +57,20 @@ const HeroSection = ({ homeStatus, setHomeStatus }) => {
 };
 
 const StyledHero = styled(motion.section)`
-  height: 90vh;
+  height: 100vh;
   display: flex;
-  img {
+  background: url(${pattern});
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  /* img {
     position: absolute;
     top: -7rem;
     left: 23.8rem;
     overflow-y: hidden !important;
     width: 80%;
     z-index: -1;
-  }
+  } */
   .details {
     padding-top: ${rem(162)};
     padding-left: ${rem(218)};

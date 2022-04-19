@@ -58,7 +58,7 @@ const StyledWork = styled(motion.section)`
   padding-left: 15%;
   padding-right: 15%;
   padding-top: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 10%;
   display: flex;
   flex-direction: column;
   gap: ${rem(20)};

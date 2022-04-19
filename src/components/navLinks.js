@@ -6,7 +6,9 @@ import { rem } from "../helpers/mixins";
 //importing Framer motion
 import { motion } from "framer-motion";
 
-const navLinks = ({ workStatus, homeStatus }) => {
+const navLinks = ({ workStatus, homeStatus,contactStatus }) => {
+  //test
+  console.log(contactStatus)
   return (
     <NavWrapper>
       <li>
@@ -29,15 +31,20 @@ const navLinks = ({ workStatus, homeStatus }) => {
           animate={{ width: workStatus === true ? "100%" : "0%" }}
         />
       </li>
-      <li>
-        <Link activeClass="active" to="home" spy={true} smooth={true}>
+      {/* <li>
+        <Link activeClass="active" to="About" spy={true} smooth={true}>
           About
         </Link>
-      </li>
+      </li> */}
       <li>
-        <Link activeClass="active" to="home" spy={true} smooth={true}>
+        <Link activeClass="active" to="contactPage" spy={true} smooth={true}>
           Contact
         </Link>
+        <Line
+          transition={{ duration: 0.75 }}
+          initial={{ width: "0%" }}
+          animate={{ width: contactStatus === true ? "100%" : "0%" }}
+        />
       </li>
       <li>
         <Link activeClass="active" to="home" spy={true} smooth={true}>

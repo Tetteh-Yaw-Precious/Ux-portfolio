@@ -8,11 +8,11 @@ import styled from "styled-components";
 //importing images
 import brandLogo from "../assets/images/logo.png";
 
-const nav = ({ workStatus, setWorkStatus,homeStatus }) => {
+const nav = ({ workStatus, setWorkStatus,homeStatus, contactStatus}) => {
   return (
     <NavigationBar>
       <img src={brandLogo} alt="my-logo" />
-      <NavLinks workStatus={workStatus} setWorkStatus={setWorkStatus} homeStatus={homeStatus}/>
+      <NavLinks workStatus={workStatus} setWorkStatus={setWorkStatus} homeStatus={homeStatus} contactStatus={contactStatus}/>
     </NavigationBar>
   );
 };

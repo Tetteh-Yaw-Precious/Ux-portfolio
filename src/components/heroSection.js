@@ -18,7 +18,6 @@ const HeroSection = ({ homeStatus, setHomeStatus }) => {
   //setting homeStatus
   useEffect(() => {
     setHomeStatus(view);
-    console.log(homeStatus);
   });
   return (
     <StyledHero

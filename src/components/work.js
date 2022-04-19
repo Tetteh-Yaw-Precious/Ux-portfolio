@@ -24,10 +24,10 @@ const Work = ({ workStatus, setWorkStatus }) => {
 
   return (
     <StyledWork ref={element} animate={controls} id="projects">
-      {/* <div className="workAd">
+      <div className="workAd">
         <p>~Recent Works</p>
         <hr />
-      </div> */}
+      </div>
       <div className="caseStudyShowcase">
         <CaseStudyv2
           coverImg={WestPort}
@@ -53,20 +53,19 @@ const Work = ({ workStatus, setWorkStatus }) => {
   );
 };
 const StyledWork = styled(motion.section)`
-  border: 1px solid red;
   width: 100%;
   min-height: 100vh;
   padding-left: 15%;
   padding-right: 15%;
-  padding-top: 10%;
-  padding-bottom: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   display: flex;
   flex-direction: column;
   gap: ${rem(20)};
   .workAd {
     p {
       color: var(--accent-color);
-      font-weight: 400;
+      font-weight: 600;
     }
     .info {
       font-weight: 600;

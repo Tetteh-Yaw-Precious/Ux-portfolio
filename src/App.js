@@ -13,8 +13,7 @@ const App = () => {
   //setting state for all navitems
   const [homeStatus, setHomeStatus] = useState(false);
   const [workStatus, setWorkStatus] = useState(false);
-  const [aboutStatus, setaboutStatus] = useState(false);
-  const [contactStatus, setcontactStatus] = useState(false);
+  const [contactStatus, setContactStatus] = useState(false);
 
   return (
     <div>
@@ -24,9 +23,10 @@ const App = () => {
           workStatus={workStatus}
           homeStatus={homeStatus}
           setHomeStatus={setHomeStatus}
+          contactStatus={contactStatus}
         />
-        <Work workStatus={workStatus} setWorkStatus={setWorkStatus} />
-        <Contact />
+        <Work setWorkStatus={setWorkStatus} />
+        <Contact  setContactStatus={setContactStatus}/>
       </AnimatePresence>
     </div>
   );

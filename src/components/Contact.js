@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { rem } from "../helpers/mixins";
 import call from "../assets/images/call.png";
@@ -10,13 +10,25 @@ import { motion } from "framer-motion";
 
 //importing component
 import SocialLink from "./socialLink";
+import { UseScroll } from "./useScroll";
 
-const Contact = () => {
+const Contact = ({ setContactStatus }) => {
+  //react intersection observer
+  const [element, controls, view] = UseScroll();
+
+  //useEffect
+  useEffect(() => {
+    setContactStatus(view);
+    // console.log(workStatus);
+  });
+
+
+
   return (
-    <StyledContact>
+    <StyledContact ref={element} id="contactPage" animate={controls}>
       <div className="contact-info">
         <div className="ad">
-          <p>~Recent Works</p>
+          <p>~ Contact Us</p>
           <hr />
           <p className="info">
             Interested in working <br />
@@ -45,7 +57,7 @@ const Contact = () => {
         </div>
       </div>
       <form>
-        <input type="email" placeholder="Enter your email" required/>
+        <input type="email" placeholder="Enter your email" required />
         <textarea
           name=""
           id=""
@@ -76,7 +88,7 @@ const StyledContact = styled(motion.section)`
 
       p {
         color: white;
-        font-weight: 400;
+        font-weight: 600;
       }
       .info {
         font-weight: 600;
@@ -110,7 +122,7 @@ const StyledContact = styled(motion.section)`
         font-size: 1rem;
       }
       &::placeholder {
-        color: #7B7B7B;
+        color: #7b7b7b;
         font-family: var(--secondary-font);
         font-size: ${rem(16)};
       }
@@ -123,7 +135,7 @@ const StyledContact = styled(motion.section)`
         border: 2px solid var(--accent-color);
       }
       &::placeholder {
-        color: #7B7B7B;
+        color: #7b7b7b;
         font-family: var(--secondary-font);
         font-size: ${rem(16)};
       }

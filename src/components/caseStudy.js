@@ -5,15 +5,15 @@ import arrowIcon from "../assets/images/arrow.png";
 
 //Framer-motion
 import { motion } from "framer-motion";
-import { photoAnim, pageAnimation } from "../animations/animation";
+import {  pageAnimation,titleAnim ,nameAnimation} from "../animations/animation";
 
 const caseStudy = ({ weblink, caseStudyName, caseStudyDetail, coverImg }) => {
   return (
-    <StyledCaseStudy variants={pageAnimation} animate="show">
+    <StyledCaseStudy variants={pageAnimation} initial="hidden" animate="show" >
       <div className="info">
         <div className="casestudy-summary">
-          <h6>{caseStudyName}</h6>
-          <p>
+          <motion.h6 variants={titleAnim}>{caseStudyName}</motion.h6>
+          <motion.p variants={titleAnim}>
             {/* Seguah Bookswap is a platform that aims at bringing all and sundry{" "}
             <br />
             who love reading and the creative arts together, together we aim at{" "}
@@ -21,17 +21,17 @@ const caseStudy = ({ weblink, caseStudyName, caseStudyDetail, coverImg }) => {
             creating a community of book lovers by donating , buying and <br />
             swapping of books within Accra and Ghana as a whole */}
             {caseStudyDetail}
-          </p>
-          <a href={weblink} target="_blank" rel="noreferrer">
+          </motion.p>
+          <motion.a href={weblink} target="_blank" rel="noreferrer" variants={titleAnim}>
             Read case study <img src={arrowIcon} alt="forward icon" />
-          </a>
+          </motion.a>
         </div>
       </div>
       <div className="cover">
         <motion.img
           src={coverImg}
           alt="case study cover"
-          variants={photoAnim}
+          variants={nameAnimation}
         />
       </div>
     </StyledCaseStudy>
@@ -59,11 +59,12 @@ const StyledCaseStudy = styled(motion.section)`
         color: hsla(231, 91%, 21%, 1);
         display: flex;
         gap: 0.5rem;
-        color: var(--accent-color);
+        color: var(--case-study-link-color);
       }
     }
   }
   .cover {
+    width: 100%;
     img {
       width: 100%;
     }

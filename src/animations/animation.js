@@ -35,13 +35,13 @@ export const fade = {
 };
 export const photoAnim = {
   hidden: {
-    scale: 2,
+    scale: 0,
     Opacity: 0,
   },
   show: {
     scale: 1,
     opacity: 1,
-    transition: { ease: "easeOut", duration: 0.6 },
+    transition: { ease: "easeIn", duration: 0.5 },
   },
 };
 
@@ -50,7 +50,7 @@ export const fadeIn = {
   show: { opacity: 1, transition: { duration: 2 } },
 };
 export const nameAnimation = {
-  hidden: { opacity: 0, y: 100, position: "absolute" },
+  hidden: { opacity: 0, y: -50, position: "absolute" },
   show: {
     opacity: 1,
     y: 0,

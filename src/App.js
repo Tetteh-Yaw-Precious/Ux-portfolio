@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <div>
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         <Globalstyle />
         <Landingpage
           workStatus={workStatus}

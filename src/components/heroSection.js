@@ -72,8 +72,8 @@ const StyledHero = styled(motion.section)`
     z-index: -1;
   } */
   .details {
-    padding-top: ${rem(162)};
-    padding-left: ${rem(218)};
+    padding-top: ${rem(200)};
+    padding-left: 10%;
     .title {
       h1 {
         font-weight: 200 !important;

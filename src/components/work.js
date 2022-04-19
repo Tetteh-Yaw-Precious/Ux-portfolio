@@ -8,6 +8,9 @@ import WestPort from "../assets/images/Westport.jpg";
 
 //framer-motion
 import { motion } from "framer-motion";
+import { pageAnimation,titleAnim } from "../animations/animation";
+
+//UseScroll 
 
 //react intersection observer
 import { UseScroll } from "./useScroll";
@@ -23,19 +26,20 @@ const Work = ({ workStatus, setWorkStatus }) => {
   });
 
   return (
-    <StyledWork ref={element} animate={controls} id="projects">
+    <StyledWork ref={element} animate={controls} initial="hidden" variants={pageAnimation}id="projects" exit="exit">
       <div className="workAd">
-        <p>~Recent Works</p>
+        <motion.p variants={titleAnim}>~Recent Works</motion.p>
         <hr />
       </div>
-      <div className="caseStudyShowcase">
+      <div className="caseStudyShowcase" variants={titleAnim}>
         <CaseStudyv2
           coverImg={WestPort}
+          variants={titleAnim}
           caseStudyDetail={`
         A web application that helps the managers of  Wesport Petroleum
          take control of day to day operations by keeping track of sale stocks
           that they sell.
-      `}
+      ` }
           caseStudyName={"1. WestPort Petroleum"}
         />{" "}
         <CaseStudy

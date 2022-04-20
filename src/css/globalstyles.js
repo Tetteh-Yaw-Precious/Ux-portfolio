@@ -90,7 +90,7 @@ button{
   color: var(--text-black);
   &:hover{
     color: white;
-    background: var(--accent-color);
+    background: #00915c !important;
   }
 }
 .link{

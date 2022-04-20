@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { rem } from "../helpers/mixins";
 
 //icons
-import { FaWhatsapp, FaLinkedin,FaPhoneAlt } from "react-icons/fa";
+import { FaWhatsapp, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 
 //framer motion
 import { motion } from "framer-motion";
@@ -35,22 +35,19 @@ const Contact = ({ setContactStatus }) => {
         </div>
         <div className="socials">
           <SocialLink
-            image={<FaPhoneAlt className="img"/>}
-            linkref="(+233) 596555397"
-            path="/dfdf"
-            alt="call"
+            image={<FaPhoneAlt className="img" />}
+            linkref="tel:(+233)596555397"
+            path="tel:(+233)596555397"
           />
           <SocialLink
             image={<FaWhatsapp className="img" />}
             linkref="let’s connect via Whatsapp"
-            path="/dfdf"
-            alt="whatsapp"
+            path="https://wa.me/233552646695"
           />
           <SocialLink
             image={<FaLinkedin className="img" />}
             linkref="let’s connect via LinkedIn"
-            path="/dfdf"
-            alt="linkedin"
+            path="https://www.linkedin.com/in/precious-tetteh-431b0418b/"
           />
         </div>
       </div>

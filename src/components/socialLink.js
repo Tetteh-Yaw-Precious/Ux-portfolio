@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { rem } from "../helpers/mixins";
 
-const socialLink = ({ image, linkref, path, alt }) => {
+const socialLink = ({ image, linkref, path }) => {
   return (
     <StyledSocial>
       <div className="imageCt">{image}</div>
-      <a href={linkref} target="_blank" rel="noreferrer">
+      <a href={path} target="_blank" rel="noopener noreferrer">
         <p>{linkref}</p>
       </a>
     </StyledSocial>

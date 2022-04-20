@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import { rem } from "../helpers/mixins";
-import call from "../assets/images/call.png";
-import whatsapp from "../assets/images/whatsapp.png";
-import linkedin from "../assets/images/linkedIn.png";
 
 //icons
 import { FaWhatsapp, FaLinkedin,FaPhoneAlt } from "react-icons/fa";
@@ -41,19 +38,19 @@ const Contact = ({ setContactStatus }) => {
             image={<FaPhoneAlt className="img"/>}
             linkref="(+233) 596555397"
             path="/dfdf"
-            alt="i"
+            alt="call"
           />
           <SocialLink
             image={<FaWhatsapp className="img" />}
             linkref="let’s connect via Whatsapp"
             path="/dfdf"
-            alt={whatsapp}
+            alt="whatsapp"
           />
           <SocialLink
             image={<FaLinkedin className="img" />}
             linkref="let’s connect via LinkedIn"
             path="/dfdf"
-            alt={linkedin}
+            alt="linkedin"
           />
         </div>
       </div>

@@ -60,7 +60,9 @@ const Contact = ({ setContactStatus }) => {
           rows="10"
           placeholder="Enter your message"
         ></textarea>
-        <button type="button">send</button>
+        <div className="buttonCt">
+          <button type="button">send</button>
+        </div>
       </form>
     </StyledContact>
   );
@@ -139,9 +141,17 @@ const StyledContact = styled(motion.section)`
         font-size: 1rem;
       }
     }
-    button {
-      color: white;
-      background: var(--accent-color);
+    .buttonCt {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      button {
+        color: white;
+        background: var(--accent-color);
+        padding-left: 6rem;
+        padding-right: 6rem;
+      }
     }
   }
 `;

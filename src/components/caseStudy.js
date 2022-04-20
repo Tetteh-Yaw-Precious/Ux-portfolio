@@ -45,6 +45,7 @@ const StyledCaseStudy = styled(motion.section)`
     width: 50%;
     display: flex;
     padding: 4rem;
+    padding-left: 0;
     .casestudy-summary {
       display: flex;
       flex-direction: column;

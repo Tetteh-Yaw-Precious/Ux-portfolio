@@ -50,7 +50,7 @@ const Work = ({ workStatus, setWorkStatus }) => {
       creating a community of book lovers by donating , buying and
       swapping of books within Accra and Ghana as a whole.
     `}
-          caseStudyName={"1. Seguah Bookswap"}
+          caseStudyName={"2. Seguah Bookswap"}
         />
       </div>
     </StyledWork>

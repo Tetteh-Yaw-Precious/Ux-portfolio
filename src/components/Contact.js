@@ -5,6 +5,9 @@ import call from "../assets/images/call.png";
 import whatsapp from "../assets/images/whatsapp.png";
 import linkedin from "../assets/images/linkedIn.png";
 
+//icons
+import { FaWhatsapp, FaLinkedin,FaPhoneAlt } from "react-icons/fa";
+
 //framer motion
 import { motion } from "framer-motion";
 
@@ -22,13 +25,11 @@ const Contact = ({ setContactStatus }) => {
     // console.log(workStatus);
   });
 
-
-
   return (
     <StyledContact ref={element} id="contactPage" animate={controls}>
       <div className="contact-info">
         <div className="ad">
-          <p>~ Contact Us</p>
+          <p>~ Contact me</p>
           <hr />
           <p className="info">
             Interested in working <br />
@@ -37,19 +38,19 @@ const Contact = ({ setContactStatus }) => {
         </div>
         <div className="socials">
           <SocialLink
-            image={call}
+            image={<FaPhoneAlt className="img"/>}
             linkref="(+233) 596555397"
             path="/dfdf"
             alt="i"
           />
           <SocialLink
-            image={whatsapp}
+            image={<FaWhatsapp className="img" />}
             linkref="let’s connect via Whatsapp"
             path="/dfdf"
             alt={whatsapp}
           />
           <SocialLink
-            image={linkedin}
+            image={<FaLinkedin className="img" />}
             linkref="let’s connect via LinkedIn"
             path="/dfdf"
             alt={linkedin}
@@ -75,7 +76,7 @@ const StyledContact = styled(motion.section)`
   height: 90vh;
   background-color: #000707;
   display: flex;
-  padding: 5% 12%;
+  padding: 5% 14%;
   .contact-info {
     width: 40%;
     display: flex;
@@ -113,7 +114,7 @@ const StyledContact = styled(motion.section)`
     flex-direction: column;
     gap: ${rem(20)};
     input {
-      padding: 2rem 3rem;
+      padding: 1rem 3rem;
       outline: none;
       min-height: 4rem;
       &:focus {

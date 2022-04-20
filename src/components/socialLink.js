@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { rem } from "../helpers/mixins";
 
-const socialLink = ({ image, linkref,path, alt }) => {
+const socialLink = ({ image, linkref, path, alt }) => {
   return (
     <StyledSocial>
-      <img src={image} alt={alt} />
+      <div className="imageCt">{image}</div>
       <a href={linkref} target="_blank" rel="noreferrer">
         <p>{linkref}</p>
       </a>
@@ -15,9 +15,14 @@ const socialLink = ({ image, linkref,path, alt }) => {
 
 const StyledSocial = styled.section`
   display: flex;
+  align-items: center;
   gap: ${rem(20)};
-  img{
-      width: 4%;
+  .imageCt {
+    width: 4%;
+    color: white;
+    .img{
+      font-size: 1.5rem;
+    }
   }
   a {
     text-decoration: none;

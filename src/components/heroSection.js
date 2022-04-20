@@ -107,6 +107,8 @@ const StyledHero = styled(motion.section)`
         padding: 0.8rem 3rem;
         border-radius: 0.2rem;
         margin-left: 9rem;
+        background-color: var(--accent-color);
+        color: white;
       }
     }
   }

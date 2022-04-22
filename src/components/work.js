@@ -5,7 +5,7 @@ import CaseStudy from "./caseStudy";
 import CaseStudyv2 from "./caseStudyv2";
 import seguahBookswap from "../assets/images/seguah.jpg";
 import WestPort from "../assets/images/Westport.jpg";
-import SeguahBrand from "../assets/images/brandingSeguah.png";
+// import SeguahBrand from "../assets/images/brandingSeguah.png";
 
 //import uuid v4
 import { v4 as uuid } from "uuid";

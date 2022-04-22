@@ -4,11 +4,11 @@ import { rem } from "../helpers/mixins";
 
 //framer
 import { motion } from "framer-motion";
-import {
-  pageAnimation,
-  titleAnim,
-  nameAnimation,
-} from "../animations/animation";
+// import {
+//   pageAnimation,
+//   titleAnim,
+//   nameAnimation,
+// } from "../animations/animation";
 
 const caseStudyv2 = ({
   weblink,
@@ -19,27 +19,26 @@ const caseStudyv2 = ({
   arrow
 }) => {
   return (
-    <StyledCaseStudy variants={pageAnimation} initial="hidden" animate="show">
+    <StyledCaseStudy  >
       <div className="cover">
         <motion.img
           src={coverImg}
           alt="case study cover"
-          variants={nameAnimation}
         />
       </div>
       <div className="info">
         <div className="casestudy-summary">
-          <motion.h6 variants={titleAnim} color={color}>
+          <motion.h6  color={color}>
             {caseStudyName}
           </motion.h6>
-          <motion.p variants={titleAnim}>
+          <motion.p >
             {caseStudyDetail}
           </motion.p>
           <motion.a
             href={weblink}
             target="_blank"
             rel="noreferrer"
-            variants={titleAnim}
+           
           >
             Read case study <span>{arrow}</span>
           </motion.a>

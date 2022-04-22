@@ -12,7 +12,7 @@ import { v4 as uuid } from "uuid";
 
 //framer-motion
 import { motion } from "framer-motion";
-import { pageAnimation, titleAnim } from "../animations/animation";
+import { titleAnim,pageAnimation } from "../animations/animation";
 
 //icons
 import { FaArrowRight } from "react-icons/fa";
@@ -37,18 +37,16 @@ const Work = ({ workStatus, setWorkStatus }) => {
       ref={element}
       animate={controls}
       initial="hidden"
-      // variants={pageAnimation}
+      variants={pageAnimation}
       id="projects"
-      exit="exit"
     >
       <div className="workAd">
         <motion.p variants={titleAnim}>~Recent Works</motion.p>
         <hr />
       </div>
-      <div className="caseStudyShowcase" variants={titleAnim}>
+      <div className="caseStudyShowcase">
         <CaseStudyv2
           coverImg={seguahBookswap}
-          variants={titleAnim}
           key={uuid()}
           caseStudyDetail={`
           Seguah Bookswap is a platform that aims at bringing all and sundry
@@ -72,9 +70,8 @@ const Work = ({ workStatus, setWorkStatus }) => {
           weblink="https://www.behance.net/gallery/142086471/WestPort-Petroluem-MDashboard-Case-Study"
           arrow={<FaArrowRight className="arrow" />}
         />
-        <CaseStudyv2
+        {/* <CaseStudyv2
           coverImg={SeguahBrand}
-          variants={titleAnim}
           caseStudyDetail={`
           Seguah Bookswap is a platform that aims at bringing all and sundry
           who love reading and the creative arts together, together we aim at
@@ -84,14 +81,15 @@ const Work = ({ workStatus, setWorkStatus }) => {
           caseStudyName={"3. Bookswap Brand Design"}
           weblink="https://www.behance.net/gallery/142190819/Seguah-Bookswap-Brand-Identity"
           arrow={<FaArrowRight className="arrow" />}
-        />
+          key={uuid()}
+        /> */}
       </div>
     </StyledWork>
   );
 };
 const StyledWork = styled(motion.section)`
   width: 100%;
-  min-height: 100%;
+  min-height: 90vh;
   border: 1px solid red;
   padding-left: 15%;
   padding-right: 15%;
@@ -118,7 +116,7 @@ const StyledWork = styled(motion.section)`
   .caseStudyShowcase {
     display: flex;
     flex-direction: column;
-    gap: ${rem(182)};
+    gap: ${rem(100)};
   }
 `;
 

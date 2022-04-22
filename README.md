@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+<CaseStudyv2
+          coverImg={WestPort}
+          variants={titleAnim}
+          caseStudyDetail={`
+        A web application that helps the managers of  Wesport Petroleum
+         take control of day to day operations by keeping track of sale stocks
+          that they sell.
+      ` }
+          caseStudyName={"1. WestPort Petroleum"}
+        />{" "}
+        <CaseStudy
+          coverImg={seguahBookswap}
+          caseStudyDetail={`
+      Seguah Bookswap is a platform that aims at bringing all and sundry
+      who love reading and the creative arts together, together we aim at
+      creating a community of book lovers by donating , buying and
+      swapping of books within Accra and Ghana as a whole.
+    `}
+          caseStudyName={"2. Seguah Bookswap"}
+        />

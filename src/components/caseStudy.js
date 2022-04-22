@@ -1,15 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import { rem } from "../helpers/mixins";
-import arrowIcon from "../assets/images/arrow.png";
 
 //Framer-motion
 import { motion } from "framer-motion";
-import {  pageAnimation,titleAnim ,nameAnimation} from "../animations/animation";
+import {
+  pageAnimation,
+  titleAnim,
+  nameAnimation,
+} from "../animations/animation";
 
-const caseStudy = ({ weblink, caseStudyName, caseStudyDetail, coverImg }) => {
+const caseStudy = ({
+  weblink,
+  caseStudyName,
+  caseStudyDetail,
+  coverImg,
+  arrow,
+}) => {
   return (
-    <StyledCaseStudy variants={pageAnimation} initial="hidden" animate="show" >
+    <StyledCaseStudy variants={pageAnimation} initial="hidden" animate="show">
       <div className="info">
         <div className="casestudy-summary">
           <motion.h6 variants={titleAnim}>{caseStudyName}</motion.h6>
@@ -22,8 +31,13 @@ const caseStudy = ({ weblink, caseStudyName, caseStudyDetail, coverImg }) => {
             swapping of books within Accra and Ghana as a whole */}
             {caseStudyDetail}
           </motion.p>
-          <motion.a href={weblink} target="_blank" rel="noreferrer" variants={titleAnim}>
-            Read case study <img src={arrowIcon} alt="forward icon" />
+          <motion.a
+            href={weblink}
+            target="_blank"
+            rel="noreferrer"
+            variants={titleAnim}
+          >
+            Read case study <span>{arrow}</span>
           </motion.a>
         </div>
       </div>
@@ -51,7 +65,7 @@ const StyledCaseStudy = styled(motion.section)`
       flex-direction: column;
       gap: ${rem(24)};
       h6 {
-        color: hsla(294, 49%, 30%, 1);
+        color: hsla(231, 91%, 21%, 1);
         font-weight: 600;
         font-family: var(--primary-font);
       }
@@ -61,6 +75,12 @@ const StyledCaseStudy = styled(motion.section)`
         display: flex;
         gap: 0.5rem;
         color: var(--case-study-link-color);
+        span {
+          .arrow {
+            font-size: 1.1rem;
+            color: var(--case-study-link-color);
+          }
+        }
       }
     }
   }

@@ -5,12 +5,19 @@ import CaseStudy from "./caseStudy";
 import CaseStudyv2 from "./caseStudyv2";
 import seguahBookswap from "../assets/images/seguah.jpg";
 import WestPort from "../assets/images/Westport.jpg";
+import SeguahBrand from "../assets/images/brandingSeguah.png";
+
+//import uuid v4
+import { v4 as uuid } from "uuid";
 
 //framer-motion
 import { motion } from "framer-motion";
-import { pageAnimation,titleAnim } from "../animations/animation";
+import { pageAnimation, titleAnim } from "../animations/animation";
 
-//UseScroll 
+//icons
+import { FaArrowRight } from "react-icons/fa";
+
+//UseScroll
 
 //react intersection observer
 import { UseScroll } from "./useScroll";
@@ -26,31 +33,57 @@ const Work = ({ workStatus, setWorkStatus }) => {
   });
 
   return (
-    <StyledWork ref={element} animate={controls} initial="hidden" variants={pageAnimation}id="projects" exit="exit">
+    <StyledWork
+      ref={element}
+      animate={controls}
+      initial="hidden"
+      // variants={pageAnimation}
+      id="projects"
+      exit="exit"
+    >
       <div className="workAd">
         <motion.p variants={titleAnim}>~Recent Works</motion.p>
         <hr />
       </div>
       <div className="caseStudyShowcase" variants={titleAnim}>
         <CaseStudyv2
+          coverImg={seguahBookswap}
+          variants={titleAnim}
+          key={uuid()}
+          caseStudyDetail={`
+          Seguah Bookswap is a platform that aims at bringing all and sundry
+          who love reading and the creative arts together, together we aim at
+          creating a community of book lovers by donating , buying and
+          swapping of books within Accra and Ghana as a whole.
+      `}
+          caseStudyName={"1. Seguah Bookswap UI/UX"}
+          color="red !important"
+          weblink="https://www.behance.net/gallery/142178211/Seguah-Bookswap"
+          arrow={<FaArrowRight className="arrow" />}
+        />
+        <CaseStudy
           coverImg={WestPort}
+          caseStudyDetail={`
+          A web application that helps the managers of  Wesport Petroleum
+          take control of day to day operations by keeping track of sale stocks
+           that they sell.
+    `}
+          caseStudyName={"2. WestPort Petroleum UI/UX"}
+          weblink="https://www.behance.net/gallery/142086471/WestPort-Petroluem-MDashboard-Case-Study"
+          arrow={<FaArrowRight className="arrow" />}
+        />
+        <CaseStudyv2
+          coverImg={SeguahBrand}
           variants={titleAnim}
           caseStudyDetail={`
-        A web application that helps the managers of  Wesport Petroleum
-         take control of day to day operations by keeping track of sale stocks
-          that they sell.
-      ` }
-          caseStudyName={"1. WestPort Petroleum"}
-        />{" "}
-        <CaseStudy
-          coverImg={seguahBookswap}
-          caseStudyDetail={`
-      Seguah Bookswap is a platform that aims at bringing all and sundry
-      who love reading and the creative arts together, together we aim at
-      creating a community of book lovers by donating , buying and
-      swapping of books within Accra and Ghana as a whole.
-    `}
-          caseStudyName={"2. Seguah Bookswap"}
+          Seguah Bookswap is a platform that aims at bringing all and sundry
+          who love reading and the creative arts together, together we aim at
+          creating a community of book lovers by donating , buying and
+          swapping of books within Accra and Ghana as a whole.
+      `}
+          caseStudyName={"3. Bookswap Brand Design"}
+          weblink="https://www.behance.net/gallery/142190819/Seguah-Bookswap-Brand-Identity"
+          arrow={<FaArrowRight className="arrow" />}
         />
       </div>
     </StyledWork>
@@ -58,7 +91,8 @@ const Work = ({ workStatus, setWorkStatus }) => {
 };
 const StyledWork = styled(motion.section)`
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
+  border: 1px solid red;
   padding-left: 15%;
   padding-right: 15%;
   padding-top: 5%;
@@ -79,7 +113,6 @@ const StyledWork = styled(motion.section)`
     hr {
       width: 9%;
       border: 1px solid var(--accent-color);
-
     }
   }
   .caseStudyShowcase {

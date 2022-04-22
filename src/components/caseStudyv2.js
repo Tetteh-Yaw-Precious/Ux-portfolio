@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { rem } from "../helpers/mixins";
-import arrowIcon from "../assets/images/arrow.png";
 
 //framer
 import { motion } from "framer-motion";
@@ -11,7 +10,14 @@ import {
   nameAnimation,
 } from "../animations/animation";
 
-const caseStudyv2 = ({ weblink, caseStudyName, caseStudyDetail, coverImg }) => {
+const caseStudyv2 = ({
+  weblink,
+  caseStudyName,
+  caseStudyDetail,
+  coverImg,
+  color,
+  arrow
+}) => {
   return (
     <StyledCaseStudy variants={pageAnimation} initial="hidden" animate="show">
       <div className="cover">
@@ -23,14 +29,10 @@ const caseStudyv2 = ({ weblink, caseStudyName, caseStudyDetail, coverImg }) => {
       </div>
       <div className="info">
         <div className="casestudy-summary">
-          <motion.h6 variants={titleAnim}>{caseStudyName}</motion.h6>
+          <motion.h6 variants={titleAnim} color={color}>
+            {caseStudyName}
+          </motion.h6>
           <motion.p variants={titleAnim}>
-            {/* Seguah Bookswap is a platform that aims at bringing all and sundry{" "}
-          <br />
-          who love reading and the creative arts together, together we aim at{" "}
-          <br />
-          creating a community of book lovers by donating , buying and <br />
-          swapping of books within Accra and Ghana as a whole */}
             {caseStudyDetail}
           </motion.p>
           <motion.a
@@ -39,7 +41,7 @@ const caseStudyv2 = ({ weblink, caseStudyName, caseStudyDetail, coverImg }) => {
             rel="noreferrer"
             variants={titleAnim}
           >
-            Read case study <img src={arrowIcon} alt="forward icon" />
+            Read case study <span>{arrow}</span>
           </motion.a>
         </div>
       </div>
@@ -60,15 +62,22 @@ const StyledCaseStudy = styled(motion.section)`
       flex-direction: column;
       gap: ${rem(24)};
       h6 {
-        color: hsla(212, 100%, 23%, 1);
+        /* color: hsla(212, 100%, 23%, 1); */
         font-weight: 600;
         font-family: var(--primary-font);
+        color: hsla(294, 49%, 30%, 1);
       }
       a {
         cursor: pointer;
         color: var(--case-study-link-color);
         display: flex;
         gap: 0.5rem;
+        span{
+          .arrow{
+            font-size: 1.1rem;
+            color: var(--case-study-link-color);
+          }
+        }
       }
     }
   }

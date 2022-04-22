@@ -16,8 +16,8 @@ const App = () => {
   const [contactStatus, setContactStatus] = useState(false);
 
   return (
-    <div>
-      <AnimatePresence exitBeforeEnter>
+    <AnimatePresence exitBeforeEnter>
+      <div>
         <Globalstyle />
         <Landingpage
           workStatus={workStatus}
@@ -26,9 +26,9 @@ const App = () => {
           contactStatus={contactStatus}
         />
         <Work setWorkStatus={setWorkStatus} />
-        <Contact  setContactStatus={setContactStatus}/>
-      </AnimatePresence>
-    </div>
+        <Contact setContactStatus={setContactStatus} />
+      </div>
+    </AnimatePresence>
   );
 };
 

@@ -12,7 +12,7 @@ import { v4 as uuid } from "uuid";
 
 //framer-motion
 import { motion } from "framer-motion";
-import { titleAnim,pageAnimation } from "../animations/animation";
+import { titleAnim, pageAnimation } from "../animations/animation";
 
 //icons
 import { FaArrowRight } from "react-icons/fa";
@@ -55,7 +55,6 @@ const Work = ({ workStatus, setWorkStatus }) => {
           swapping of books within Accra and Ghana as a whole.
       `}
           caseStudyName={"1. Seguah Bookswap UI/UX"}
-          color="red !important"
           weblink="https://www.behance.net/gallery/142178211/Seguah-Bookswap"
           arrow={<FaArrowRight className="arrow" />}
         />
@@ -89,8 +88,7 @@ const Work = ({ workStatus, setWorkStatus }) => {
 };
 const StyledWork = styled(motion.section)`
   width: 100%;
-  min-height: 90vh;
-  border: 1px solid red;
+  min-height: 100rem;
   padding-left: 15%;
   padding-right: 15%;
   padding-top: 5%;
@@ -117,6 +115,7 @@ const StyledWork = styled(motion.section)`
     display: flex;
     flex-direction: column;
     gap: ${rem(100)};
+    min-height: 90vh;
   }
 `;
 

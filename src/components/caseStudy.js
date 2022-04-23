@@ -55,6 +55,9 @@ const StyledCaseStudy = styled(motion.section)`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media ${device.tab_port} {
+    flex-direction: column-reverse;
+  }
   @media ${device.phone} {
     flex-direction: column-reverse;
   }
@@ -64,6 +67,13 @@ const StyledCaseStudy = styled(motion.section)`
     padding: 4rem;
     padding-left: 0;
     @media ${device.phone} {
+      width: 100%;
+      padding: 2rem;  
+      padding-left: 0;
+      padding-right: 0;
+
+    }
+    @media ${device.tab_port} {
       width: 100%;
       padding: 2rem;  
       padding-left: 0;

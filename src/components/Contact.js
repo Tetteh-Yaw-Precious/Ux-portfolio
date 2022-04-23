@@ -78,6 +78,12 @@ const StyledContact = styled(motion.section)`
   display: flex;
   padding: 5% 14%;
   padding-bottom: 2%;
+  @media ${device.tab_port} {
+    flex-direction: column;
+    padding: 15% 5%;
+    height: 100vh;
+    gap: 2rem;
+  }
   @media ${device.phone} {
     flex-direction: column;
     padding: 15% 5%;
@@ -89,6 +95,12 @@ const StyledContact = styled(motion.section)`
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    @media ${device.tab_port} {
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
     @media ${device.phone} {
       width: 100%;
     }
@@ -110,12 +122,19 @@ const StyledContact = styled(motion.section)`
         width: 20%;
         color: var(--accent-color);
         border: 1px solid var(--accent-color);
+        @media ${device.tab_port} {
+          width: 35%;
+        }
+        @media ${device.phone} {
+          width: 40%;
+        }
       }
     }
     .socials {
       display: flex;
       flex-direction: column;
       gap: ${rem(20)};
+      padding-top: 6rem;
     }
   }
   form {
@@ -124,6 +143,9 @@ const StyledContact = styled(motion.section)`
     flex-direction: column;
     gap: ${rem(20)};
     @media ${device.phone} {
+      width: 100%;
+    }
+    @media ${device.tab_port} {
       width: 100%;
     }
     input {

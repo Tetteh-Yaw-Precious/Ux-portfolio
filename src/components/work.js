@@ -95,8 +95,12 @@ const StyledWork = styled(motion.section)`
   padding-bottom: 10%;
   display: flex;
   flex-direction: column;
+  @media ${device.tab_port} {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 15%;
+  }
   @media ${device.phone} {
-    border: 1px solid red;
     padding-left: 5%;
     padding-right: 5%;
     padding-top: 30%;
@@ -115,6 +119,9 @@ const StyledWork = styled(motion.section)`
     hr {
       width: 9%;
       border: 1px solid var(--accent-color);
+      @media ${device.tab_port} {
+        width: 20%;
+      }
       @media ${device.phone} {
         width: 40%;
       }
@@ -125,6 +132,9 @@ const StyledWork = styled(motion.section)`
     flex-direction: column;
     gap: ${rem(100)};
     min-height: 90vh;
+    @media ${device.tab_port} {
+      gap: ${rem(50)};
+    }
     @media ${device.phone} {
       gap: ${rem(50)};
     }

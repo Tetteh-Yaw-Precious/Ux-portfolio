@@ -18,15 +18,15 @@ const Globalstyles = createGlobalStyle`
   font-family:var(---primary-font);
 }
 html{
-  font-size: 62.5%;  //1rem = 10px
+  font-size: 100%;  //1rem = 10px
   @media ${device.tab_land}{
-    font-size: 56.25%;
-  }
-  @media ${device.tab_port}{
-    font-size: 50%;
+    font-size: 100%;
   }
   @media ${device.big_desktop}{
     font-size: 100%;
+  }
+  @media ${device.tab_port}{
+    font-size: 90%;
   }
   @media ${device.phone} {
     font-size: 90%;
@@ -70,6 +70,9 @@ p{
   font-weight: 400;
   color: var(--text-black);
   font-family: var(--secondary-font);
+  @media ${device.tab_land}{
+    font-size: 100%;
+  }
 }
 li{
   font-size: 1.3rem;

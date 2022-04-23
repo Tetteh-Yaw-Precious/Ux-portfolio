@@ -1,7 +1,7 @@
 import React from "react";
 
 //importing components
-import { rem } from "../helpers/mixins";
+import { rem, device } from "../helpers/mixins";
 import NavLinks from "./NavLinks";
 //styled components
 import styled from "styled-components";
@@ -28,7 +28,21 @@ const NavigationBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  background-color: white;
+  @media ${device.phone} {
+    background-color: white !important;
+    height: 100vh;
+    flex-direction: column;
+    padding-left: ${rem(0)};
+    padding-right: ${rem(0)};
+    padding-bottom: 70%;
+    padding-top: 20%;
+    justify-content: space-between;
+    z-index: 2;
+    transform: translateX(100%);
+    transition: all 0.5s ease;
+    opacity: 0;
+    overflow: hidden;
+  }
 `;
 
 export default nav;

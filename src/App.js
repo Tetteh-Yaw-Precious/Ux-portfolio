@@ -15,7 +15,7 @@ const App = () => {
   const [homeStatus, setHomeStatus] = useState(false);
   const [workStatus, setWorkStatus] = useState(false);
   const [contactStatus, setContactStatus] = useState(false);
-  const [navStatus, setNavStatus] = useState(false)
+  // const [navStatus, setNavStatus] = useState(false)
 
   return (
     <AnimatePresence exitBeforeEnter>

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-scroll/modules";
 import styled from "styled-components";
-import { rem } from "../helpers/mixins";
+import { rem,device } from "../helpers/mixins";
 
 //importing Framer motion
 import { motion } from "framer-motion";
@@ -65,6 +65,9 @@ const NavLinks = () => {
 const NavWrapper = styled.ul`
   display: flex;
   gap: ${rem(48)};
+  @media ${device.phone} {
+    flex-direction: column;
+  }
   li {
     color: var(--text-black) !important;
     font-family: var(--secondary-font);

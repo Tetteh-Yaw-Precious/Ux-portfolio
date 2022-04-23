@@ -102,13 +102,16 @@ const StyledContact = styled(motion.section)`
       justify-content: space-between;
     }
     @media ${device.phone} {
+      flex-direction: column;
       width: 100%;
+      gap: 1rem;
+      align-items: flex-start;
     }
+    align-items: flex-start;
     .ad {
       display: flex;
       flex-direction: column;
       gap: ${rem(8)};
-
       p {
         color: white;
         font-weight: 600;
@@ -135,6 +138,9 @@ const StyledContact = styled(motion.section)`
       flex-direction: column;
       gap: ${rem(20)};
       padding-top: 6rem;
+      @media ${device.phone} {
+        justify-content: flex-start;
+      }
     }
   }
   form {

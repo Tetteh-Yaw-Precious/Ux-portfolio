@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Landingpage from "./components/landingPage";
 import Work from "./components/work";
 import Contact from "./components/Contact";
+import { NavLinksContext } from "./contexts/NavlinksContext";
 
 //Importing global styles
 import Globalstyle from "./css/globalstyles";
@@ -17,17 +18,26 @@ const App = () => {
 
   return (
     <AnimatePresence exitBeforeEnter>
-      <div>
-        <Globalstyle />
-        <Landingpage
-          workStatus={workStatus}
-          homeStatus={homeStatus}
-          setHomeStatus={setHomeStatus}
-          contactStatus={contactStatus}
-        />
-        <Work setWorkStatus={setWorkStatus} />
-        <Contact setContactStatus={setContactStatus} />
-      </div>
+      <NavLinksContext.Provider
+        value={{
+          homeStatus,
+          setHomeStatus,
+          workStatus,
+          setWorkStatus,
+          contactStatus,
+          setContactStatus,
+        }}
+      >
+        <div>
+          <Globalstyle />
+          <Landingpage
+            homeStatus={homeStatus}
+            setHomeStatus={setHomeStatus}
+          />
+          <Work setWorkStatus={setWorkStatus} />
+          <Contact setContactStatus={setContactStatus} />
+        </div>
+      </NavLinksContext.Provider>
     </AnimatePresence>
   );
 };

@@ -9,7 +9,6 @@ const Globalstyles = createGlobalStyle`
     --secondary-font:'Oxygen', sans-serif;
     --text-black: #151211;
     --case-study-link-color: hsla(231, 6%, 37%, 1);
-
 }
 * {
   margin: 0;
@@ -53,8 +52,6 @@ h3{
 }
 h4{
   font-size: ${rem(15)};
-  color: #FE4370;
-  border-bottom: 2px solid #fe4370;
   padding: 0 2rem 0.5rem 0;
 }
 h6{

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-scroll/modules";
 import styled from "styled-components";
 import { rem } from "../helpers/mixins";
@@ -6,15 +6,22 @@ import { rem } from "../helpers/mixins";
 //importing Framer motion
 import { motion } from "framer-motion";
 
-const navLinks = ({ workStatus, homeStatus,contactStatus }) => {
+//Context
+import { NavLinksContext } from "../contexts/NavlinksContext";
+
+const NavLinks = () => {
+  const { workStatus, homeStatus, contactStatus } = useContext(NavLinksContext);
   //test
-  console.log(contactStatus)
+  console.log(contactStatus);
   return (
     <NavWrapper>
       <li>
-        <Link activeClass="active" to="heroSection" spy={true} smooth={true}>
-          Home
-        </Link>
+        <Link
+          activeClass="active"
+          to="heroSection"
+          spy={true}
+          smooth={true}
+        >Home</Link>
         <Line
           transition={{ duration: 0.75 }}
           initial={{ width: "10%" }}
@@ -77,4 +84,4 @@ const Line = styled(motion.div)`
   left: -2%;
 `;
 
-export default navLinks;
+export default NavLinks;

@@ -1,28 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useContext } from "react";
 import styled from "styled-components";
 import { rem, device } from "../helpers/mixins";
 import CaseStudy from "./caseStudy";
 import CaseStudyv2 from "./caseStudyv2";
 import seguahBookswap from "../assets/images/seguah.jpg";
 import WestPort from "../assets/images/Westport.jpg";
-// import SeguahBrand from "../assets/images/brandingSeguah.png";
-
 //import uuid v4
 import { v4 as uuid } from "uuid";
-
 //framer-motion
 import { motion } from "framer-motion";
 import { titleAnim, pageAnimation } from "../animations/animation";
-
 //icons
 import { FaArrowRight } from "react-icons/fa";
-
 //UseScroll
-
-//react intersection observer
 import { UseScroll } from "./useScroll";
+//context
+import {NavLinksContext} from "../contexts/NavlinksContext.js";
 
-const Work = ({ workStatus, setWorkStatus }) => {
+
+const Work = ({ }) => {
+//context
+const {setWorkStatus} = useContext(NavLinksContext)
+
   //intersection api
   const [element, controls, view] = UseScroll();
   // console.log(workStatus);

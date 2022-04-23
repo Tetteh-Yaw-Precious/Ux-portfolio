@@ -1,21 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
 import pattern from "../assets/images/background.png";
 import { rem, device } from "../helpers/mixins";
 import { Link } from "react-scroll";
-
 //importing animation
 import { motion } from "framer-motion";
 import { pageAnimation, slideIn, titleAnim } from "../animations/animation";
-
-//react intersection observer import React from "react"; import styled from "styled-components"; import { device } from "../helpers/Mixins"; import Tetteh_Yaw_Precious from "../images/Tetteh_Yaw_Precious.png"; //importing Animation import { motion } from "framer-motion"; import { pageAnimation } from "../animations/Pageanimation"; import { UseScroll } from "./Usescroll";  const About = () => {   const [element, controls] = UseScroll();   return (     <StyledAbout id="about">       <motion.div         ref={element}         className="mainaboutCt"         variants={pageAnimation}         intial="hidden"         animate={controls}         exit="exit"       >         <div className="abouttext">           <h4>About</h4>           <h1>Here is something little about me </h1>           <p>             Hello! My name is Tetteh Yaw Precious, I love to design and work on             digital products. Me being introduced closely to the tech industry             during a three-week boot camp in 2019, gave me the urge to know more             and add to what I have been introduced to as a lifelong learner             built and developed my interest in Web development, Graphic Design,             User Interface Design, and IoT. Since then I’ve worked par-time and             freelance as Graphic Designer, Brand Identity Designer, UI/UX             designer and frontend Developer on teams to working on various             projects.           </p>         </div>         <div className="myimage">           <img src={Tetteh_Yaw_Precious} alt="Tetteh Yaw Precious" />         </div>       </motion.div>     </StyledAbout>   );
+//react intersection
 import { UseScroll } from "./useScroll";
+//contexts
+import { NavLinksContext } from "../contexts/NavlinksContext";
 
-const HeroSection = ({ homeStatus, setHomeStatus }) => {
+const HeroSection = () => {
+  //context
+  const { setHomeStatus } = useContext(NavLinksContext);
   //intersection api
   const [element, controls, view] = UseScroll();
 
-  //setting homeStatus import React from "react"; import styled from "styled-components"; import { device } from "../helpers/Mixins"; import Tetteh_Yaw_Precious from "../images/Tetteh_Yaw_Precious.png"; //importing Animation import { motion } from "framer-motion"; import { pageAnimation } from "../animations/Pageanimation"; import { UseScroll } from "./Usescroll";  const About = () => {   const [element, controls] = UseScroll();   return (     <StyledAbout id="about">       <motion.div         ref={element}         className="mainaboutCt"         variants={pageAnimation}         intial="hidden"         animate={controls}         exit="exit"       >         <div className="abouttext">           <h4>About</h4>           <h1>Here is something little about me </h1>           <p>             Hello! My name is Tetteh Yaw Precious, I love to design and work on             digital products. Me being introduced closely to the tech industry             during a three-week boot camp in 2019, gave me the urge to know more             and add to what I have been introduced to as a lifelong learner             built and developed my interest in Web development, Graphic Design,             User Interface Design, and IoT. Since then I’ve worked par-time and             freelance as Graphic Designer, Brand Identity Designer, UI/UX             designer and frontend Developer on teams to working on various             projects.           </p>         </div>         <div className="myimage">           <img src={Tetteh_Yaw_Precious} alt="Tetteh Yaw Precious" />         </div>       </motion.div>     </StyledAbout>   );
+  //setting homeStatus
   useEffect(() => {
     setHomeStatus(view);
   });
@@ -26,7 +28,6 @@ const HeroSection = ({ homeStatus, setHomeStatus }) => {
       animate={controls}
       id="heroSection"
     >
-      {/* <img src={pattern} alt="pattern" /> */}
       <div className="details">
         <div className="title">
           <motion.h1 variants={titleAnim}>

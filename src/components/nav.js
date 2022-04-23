@@ -2,17 +2,22 @@ import React from "react";
 
 //importing components
 import { rem } from "../helpers/mixins";
-import NavLinks from "../components/navLinks";
+import NavLinks from "./NavLinks";
 //styled components
 import styled from "styled-components";
 //importing images
 import brandLogo from "../assets/images/logo.png";
 
-const nav = ({ workStatus, setWorkStatus,homeStatus, contactStatus}) => {
+const nav = ({ workStatus, setWorkStatus, homeStatus, contactStatus }) => {
   return (
     <NavigationBar>
       <img src={brandLogo} alt="my-logo" />
-      <NavLinks workStatus={workStatus} setWorkStatus={setWorkStatus} homeStatus={homeStatus} contactStatus={contactStatus}/>
+      <NavLinks
+        workStatus={workStatus}
+        setWorkStatus={setWorkStatus}
+        homeStatus={homeStatus}
+        contactStatus={contactStatus}
+      />
     </NavigationBar>
   );
 };

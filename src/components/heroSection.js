@@ -3,6 +3,7 @@ import styled from "styled-components";
 import pattern from "../assets/images/background.png";
 import { rem, device } from "../helpers/mixins";
 import { Link } from "react-scroll";
+import { FaBars } from "react-icons/fa";
 //importing animation
 import { motion } from "framer-motion";
 import { pageAnimation, slideIn, titleAnim } from "../animations/animation";
@@ -13,7 +14,7 @@ import { NavLinksContext } from "../contexts/NavlinksContext";
 
 const HeroSection = () => {
   //context
-  const { setHomeStatus } = useContext(NavLinksContext);
+  const { setHomeStatus,setNavStatus,navStatus } = useContext(NavLinksContext);
   //intersection api
   const [element, controls, view] = UseScroll();
 
@@ -28,6 +29,9 @@ const HeroSection = () => {
       animate={controls}
       id="heroSection"
     >
+      <div className="barsIcon">
+        <FaBars className="open" onClick={()=>{setNavStatus(!navStatus)}}/>
+      </div>
       <div className="details">
         <div className="title">
           <motion.h1 variants={titleAnim}>
@@ -75,6 +79,28 @@ const StyledHero = styled(motion.section)`
     justify-content: center;
     height: 90vh;
     align-items: center;
+    .barsIcon {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 10%;
+      position: absolute;
+      top: 3rem;
+
+      .open {
+        border: 1px solid var(--accent-color);
+        font-size: 3rem;
+        padding: 0.5rem;
+        color: var(--accent-color);
+        position: fixed;
+        z-index: 5;
+        background-color: white;
+        &:hover {
+          background-color: var(--accent-color);
+          color: white;
+        }
+      }
+    }
   }
 
   .details {

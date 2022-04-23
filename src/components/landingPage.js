@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 //importing components
-import Navbar from "./nav";
+import Navbar from "./Nav";
 import HeroSection from "./heroSection";
 
 const landingPage = () => {

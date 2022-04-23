@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
 import { rem, device } from "../helpers/mixins";
 import { v4 as uuid } from "uuid";
@@ -12,8 +12,13 @@ import { motion } from "framer-motion";
 //importing component
 import SocialLink from "./socialLink";
 import { UseScroll } from "./useScroll";
+//context
+import { NavLinksContext } from "../contexts/NavlinksContext";
 
-const Contact = ({ setContactStatus }) => {
+const Contact = () => {
+  //contexts
+  const { setContactStatus } = useContext(NavLinksContext);
+
   //react intersection observer
   const [element, controls, view] = UseScroll();
 

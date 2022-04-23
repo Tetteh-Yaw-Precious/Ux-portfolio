@@ -18,7 +18,7 @@ import { UseScroll } from "./useScroll";
 import {NavLinksContext} from "../contexts/NavlinksContext.js";
 
 
-const Work = ({ }) => {
+const Work = () => {
 //context
 const {setWorkStatus} = useContext(NavLinksContext)
 

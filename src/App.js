@@ -15,6 +15,7 @@ const App = () => {
   const [homeStatus, setHomeStatus] = useState(false);
   const [workStatus, setWorkStatus] = useState(false);
   const [contactStatus, setContactStatus] = useState(false);
+  const [navStatus, setNavStatus] = useState(false)
 
   return (
     <AnimatePresence exitBeforeEnter>
@@ -34,8 +35,8 @@ const App = () => {
             homeStatus={homeStatus}
             setHomeStatus={setHomeStatus}
           />
-          <Work setWorkStatus={setWorkStatus} />
-          <Contact setContactStatus={setContactStatus} />
+          <Work />
+          <Contact/>
         </div>
       </NavLinksContext.Provider>
     </AnimatePresence>

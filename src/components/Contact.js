@@ -73,11 +73,15 @@ const Contact = ({ setContactStatus }) => {
 };
 
 const StyledContact = styled(motion.section)`
-  height: 90vh;
+  height: 80vh;
   background-color: #000707;
   display: flex;
   padding: 5% 14%;
-  padding-bottom: 2%;
+
+  @media ${device.tab_land} {
+    border: 1px solid red;
+    padding: 5% 5%;
+  }
   @media ${device.tab_port} {
     flex-direction: column;
     padding: 15% 5%;

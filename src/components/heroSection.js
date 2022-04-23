@@ -63,6 +63,8 @@ const StyledHero = styled(motion.section)`
   width: 100%;
   background-size: cover;
   background-position: center;
+  @media ${device.tab_land} {
+  }
   @media ${device.tab_port} {
     justify-content: center;
     height: 90vh;
@@ -77,6 +79,8 @@ const StyledHero = styled(motion.section)`
   .details {
     padding-top: ${rem(200)};
     padding-left: 10%;
+    @media ${device.tab_land} {
+    }
     @media ${device.tab_port} {
       display: flex;
       justify-content: center;
@@ -91,6 +95,8 @@ const StyledHero = styled(motion.section)`
     }
 
     .title {
+      @media ${device.tab_land} {
+      }
       @media ${device.tab_port} {
         display: flex;
         flex-direction: column;
@@ -106,6 +112,9 @@ const StyledHero = styled(motion.section)`
         font-weight: 200 !important;
         letter-spacing: -0.4rem;
         line-height: 120%;
+        @media ${device.tab_land} {
+          font-size: ${rem(84)};
+        }
         @media ${device.tab_port} {
           font-size: ${rem(62)};
         }
@@ -119,6 +128,10 @@ const StyledHero = styled(motion.section)`
       }
       h6 {
         padding-left: 9rem;
+        @media ${device.tab_land} {
+          font-size: ${rem(24)};
+          padding-left: 6rem;
+        }
         @media ${device.tab_port} {
           padding-left: 0;
           font-size: ${rem(20)};
@@ -140,6 +153,10 @@ const StyledHero = styled(motion.section)`
           padding-left: 9rem !important;
           border: 0.01rem solid var(--text-black);
           width: 75%;
+          @media ${device.tab_land} {
+            padding-left: 10%;
+            width: 80%;
+          }
           @media ${device.tab_port} {
             padding-left: 0 !important;
             width: 100%;
@@ -153,6 +170,9 @@ const StyledHero = styled(motion.section)`
       p {
         padding-left: 9rem;
         padding-bottom: ${rem(20)};
+        @media ${device.tab_land} {
+          padding-left: 6rem;
+        }
         @media ${device.tab_port} {
           /* padding: 0 5% 5% 0%; */
           text-align: center;
@@ -169,6 +189,9 @@ const StyledHero = styled(motion.section)`
         margin-left: 9rem;
         background-color: var(--accent-color);
         color: white;
+        @media ${device.tab_land} {
+          margin-left: 6rem;
+        }
         @media ${device.tab_port} {
           margin-left: 0;
           margin: 0 15%;

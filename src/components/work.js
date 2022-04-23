@@ -95,6 +95,11 @@ const StyledWork = styled(motion.section)`
   padding-bottom: 10%;
   display: flex;
   flex-direction: column;
+  @media ${device.tab_land} {
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
   @media ${device.tab_port} {
     padding-left: 5%;
     padding-right: 5%;
@@ -119,6 +124,9 @@ const StyledWork = styled(motion.section)`
     hr {
       width: 9%;
       border: 1px solid var(--accent-color);
+      @media ${device.tab_land} {
+        width: 20%;
+      }
       @media ${device.tab_port} {
         width: 20%;
       }

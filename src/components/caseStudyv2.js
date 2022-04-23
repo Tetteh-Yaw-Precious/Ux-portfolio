@@ -50,6 +50,9 @@ const StyledCaseStudy = styled(motion.section)`
     width: 50%;
     display: flex;
     padding: 4rem;
+    @media ${device.tab_land} {
+      width: 50%;
+    }
     @media ${device.tab_port} {
       width: 100%;
       padding: 2rem;

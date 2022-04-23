@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { rem } from "../helpers/mixins";
+import { rem, device } from "../helpers/mixins";
 
 //Framer-motion
 import { motion } from "framer-motion";
@@ -55,15 +55,28 @@ const StyledCaseStudy = styled(motion.section)`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media ${device.phone} {
+    flex-direction: column-reverse;
+  }
   .info {
     width: 50%;
     display: flex;
     padding: 4rem;
     padding-left: 0;
+    @media ${device.phone} {
+      width: 100%;
+      padding: 2rem;  
+      padding-left: 0;
+      padding-right: 0;
+
+    }
     .casestudy-summary {
       display: flex;
       flex-direction: column;
-      gap: ${rem(24)};
+      gap: ${rem(10)};
+      @media ${device.phone} {
+    }
+
       h6 {
         color: hsla(231, 91%, 21%, 1);
         font-weight: 600;

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { rem } from "../helpers/mixins";
+import { rem, device } from "../helpers/mixins";
 import CaseStudy from "./caseStudy";
 import CaseStudyv2 from "./caseStudyv2";
 import seguahBookswap from "../assets/images/seguah.jpg";
@@ -95,6 +95,12 @@ const StyledWork = styled(motion.section)`
   padding-bottom: 10%;
   display: flex;
   flex-direction: column;
+  @media ${device.phone} {
+    border: 1px solid red;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 30%;
+  }
   gap: ${rem(20)};
   .workAd {
     p {
@@ -109,6 +115,9 @@ const StyledWork = styled(motion.section)`
     hr {
       width: 9%;
       border: 1px solid var(--accent-color);
+      @media ${device.phone} {
+        width: 40%;
+      }
     }
   }
   .caseStudyShowcase {
@@ -116,6 +125,9 @@ const StyledWork = styled(motion.section)`
     flex-direction: column;
     gap: ${rem(100)};
     min-height: 90vh;
+    @media ${device.phone} {
+      gap: ${rem(50)};
+    }
   }
 `;
 

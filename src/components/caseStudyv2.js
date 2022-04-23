@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { rem } from "../helpers/mixins";
+import { rem, device } from "../helpers/mixins";
 
 //framer
 import { motion } from "framer-motion";
@@ -16,30 +16,18 @@ const caseStudyv2 = ({
   caseStudyDetail,
   coverImg,
   color,
-  arrow
+  arrow,
 }) => {
   return (
-    <StyledCaseStudy  >
+    <StyledCaseStudy>
       <div className="cover">
-        <motion.img
-          src={coverImg}
-          alt="case study cover"
-        />
+        <motion.img src={coverImg} alt="case study cover" />
       </div>
       <div className="info">
         <div className="casestudy-summary">
-          <motion.h6  color={color}>
-            {caseStudyName}
-          </motion.h6>
-          <motion.p >
-            {caseStudyDetail}
-          </motion.p>
-          <motion.a
-            href={weblink}
-            target="_blank"
-            rel="noreferrer"
-           
-          >
+          <motion.h6 color={color}>{caseStudyName}</motion.h6>
+          <motion.p>{caseStudyDetail}</motion.p>
+          <motion.a href={weblink} target="_blank" rel="noreferrer">
             Read case study <span>{arrow}</span>
           </motion.a>
         </div>
@@ -52,10 +40,19 @@ const StyledCaseStudy = styled(motion.section)`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media ${device.phone} {
+    flex-direction: column;
+  }
   .info {
     width: 50%;
     display: flex;
     padding: 4rem;
+    @media ${device.phone} {
+      width: 100%;
+      padding: 2rem;
+      padding-left: 0;
+      padding-right: 0;
+    }
     .casestudy-summary {
       display: flex;
       flex-direction: column;
@@ -71,8 +68,8 @@ const StyledCaseStudy = styled(motion.section)`
         color: var(--case-study-link-color);
         display: flex;
         gap: 0.5rem;
-        span{
-          .arrow{
+        span {
+          .arrow {
             font-size: 1.1rem;
             color: var(--case-study-link-color);
           }

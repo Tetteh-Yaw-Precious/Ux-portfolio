@@ -22,12 +22,15 @@ html{
   @media ${device.tab_land}{
     font-size: 56.25%;
   }
-@media ${device.tab_port}{
-  font-size: 50%;
-}
-@media ${device.big_desktop}{
-  font-size: 100%;
-}
+  @media ${device.tab_port}{
+    font-size: 50%;
+  }
+  @media ${device.big_desktop}{
+    font-size: 100%;
+  }
+  @media ${device.phone} {
+    font-size: 90%;
+  }
 }
 body{
   box-sizing: border-box; 

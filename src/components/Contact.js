@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { rem } from "../helpers/mixins";
+import { rem, device } from "../helpers/mixins";
 import { v4 as uuid } from "uuid";
 
 //icons
@@ -77,11 +77,21 @@ const StyledContact = styled(motion.section)`
   background-color: #000707;
   display: flex;
   padding: 5% 14%;
+  padding-bottom: 2%;
+  @media ${device.phone} {
+    flex-direction: column;
+    padding: 15% 5%;
+    height: 100vh;
+    gap: 2rem;
+  }
   .contact-info {
     width: 40%;
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    @media ${device.phone} {
+      width: 100%;
+    }
     .ad {
       display: flex;
       flex-direction: column;
@@ -113,6 +123,9 @@ const StyledContact = styled(motion.section)`
     display: flex;
     flex-direction: column;
     gap: ${rem(20)};
+    @media ${device.phone} {
+      width: 100%;
+    }
     input {
       padding: 1rem 3rem;
       outline: none;

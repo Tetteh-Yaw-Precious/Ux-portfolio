@@ -33,6 +33,7 @@ const NavigationBar = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
     position: fixed;
     @media ${device.phone} {
       background-color: white !important;

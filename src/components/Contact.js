@@ -78,25 +78,24 @@ const Contact = () => {
 };
 
 const StyledContact = styled(motion.section)`
-  height: 80vh;
+  min-height: 80vh;
   background-color: #000707;
   display: flex;
   padding: 5% 14%;
 
   @media ${device.tab_land} {
-    border: 1px solid red;
     padding: 5% 5%;
   }
   @media ${device.tab_port} {
     flex-direction: column;
     padding: 15% 5%;
-    height: 100vh;
+    min-height: 100vh;
     gap: 2rem;
   }
   @media ${device.phone} {
     flex-direction: column;
     padding: 15% 5%;
-    height: 100vh;
+    min-height: 100vh;
     gap: 2rem;
   }
   .contact-info {

@@ -14,7 +14,8 @@ import { NavLinksContext } from "../contexts/NavlinksContext";
 
 const HeroSection = () => {
   //context
-  const { setHomeStatus,setNavStatus,navStatus } = useContext(NavLinksContext);
+  const { setHomeStatus, setNavStatus, navStatus } =
+    useContext(NavLinksContext);
   //intersection api
   const [element, controls, view] = UseScroll();
 
@@ -30,7 +31,12 @@ const HeroSection = () => {
       id="heroSection"
     >
       <div className="barsIcon">
-        <FaBars className="open" onClick={()=>{setNavStatus(!navStatus)}}/>
+        <FaBars
+          className="open"
+          onClick={() => {
+            setNavStatus(!navStatus);
+          }}
+        />
       </div>
       <div className="details">
         <div className="title">
@@ -75,30 +81,28 @@ const StyledHero = styled(motion.section)`
     height: 90vh;
     align-items: center;
   }
-  @media ${device.phone} {
-    justify-content: center;
-    height: 90vh;
-    align-items: center;
-    .barsIcon {
-      width: 100%;
+  .barsIcon {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10%;
+    position: absolute;
+    display: none;
+    @media ${device.phone} {
       display: flex;
-      justify-content: flex-end;
-      padding-right: 10%;
-      position: absolute;
-      top: 3rem;
-
-      .open {
-        border: 1px solid var(--accent-color);
-        font-size: 3rem;
-        padding: 0.5rem;
-        color: var(--accent-color);
-        position: fixed;
-        z-index: 5;
-        background-color: white;
-        &:hover {
-          background-color: var(--accent-color);
-          color: white;
-        }
+    }
+    top: 3rem;
+    .open {
+      border: 1px solid var(--accent-color);
+      font-size: 3rem;
+      padding: 0.5rem;
+      color: var(--accent-color);
+      position: fixed;
+      z-index: 5;
+      background-color: white;
+      &:hover {
+        background-color: var(--accent-color);
+        color: white;
       }
     }
   }

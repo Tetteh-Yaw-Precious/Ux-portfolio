@@ -11,7 +11,6 @@ import { NavLinksContext } from "../contexts/NavlinksContext";
 
 const Nav = () => {
   const { navStatus } = useContext(NavLinksContext);
-  console.log(`nav:::${navStatus}`)
   return (
     <NavigationBar className="activeNav">
       <div className={`navbar ${navStatus === true ? "activeNav" : ""}`}>
@@ -25,16 +24,14 @@ const Nav = () => {
 const NavigationBar = styled.nav`
   .navbar {
     width: 100%;
-    min-height: 10%;
-    padding-top: ${rem(16)};
-    padding-left: ${rem(60)};
-    padding-right: ${rem(60)};
-    padding-bottom: ${rem(16)};
+    min-height: 10vh;
+    padding: 0 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
     position: fixed;
+    top: 0;
     @media ${device.phone} {
       background-color: white !important;
       height: 100vh;

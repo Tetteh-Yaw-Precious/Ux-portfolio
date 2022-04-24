@@ -78,9 +78,10 @@ const Contact = () => {
 };
 
 const StyledContact = styled(motion.section)`
-  min-height: 80vh;
+  min-height: 100vh;
   background-color: #000707;
   display: flex;
+  align-items: center;
   padding: 5% 14%;
 
   @media ${device.tab_land} {

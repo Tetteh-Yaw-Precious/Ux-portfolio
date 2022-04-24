@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import Landingpage from "./components/landingPage";
-import Work from "./components/work";
+// import Work from "./components/work";
 import Contact from "./components/Contact";
+import NewWork from "./components/NewWork";
+import Navbar from "./components/Nav";
+import HeroSection from "./components/heroSection";
 import { NavLinksContext } from "./contexts/NavlinksContext";
+// import Work from "./components/work";
 
 //Importing global styles
 import Globalstyle from "./css/globalstyles";
@@ -27,13 +30,16 @@ const App = () => {
           setWorkStatus,
           contactStatus,
           setContactStatus,
-          setNavStatus,navStatus
+          setNavStatus,
+          navStatus,
         }}
       >
         <div>
           <Globalstyle />
-          <Landingpage homeStatus={homeStatus} setHomeStatus={setHomeStatus} />
-          <Work />
+          <Navbar />
+          <HeroSection />
+          {/* <Work /> */}
+          <NewWork />
           <Contact />
         </div>
       </NavLinksContext.Provider>

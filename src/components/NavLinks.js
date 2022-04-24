@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-scroll/modules";
 import styled from "styled-components";
-import { rem,device } from "../helpers/mixins";
+import { rem, device } from "../helpers/mixins";
 
 //importing Framer motion
 import { motion } from "framer-motion";
@@ -12,31 +12,27 @@ import { NavLinksContext } from "../contexts/NavlinksContext";
 const NavLinks = () => {
   const { workStatus, homeStatus, contactStatus } = useContext(NavLinksContext);
   //test
-  console.log(contactStatus);
   return (
     <NavWrapper>
       <li>
-        <Link
-          activeClass="active"
-          to="heroSection"
-          spy={true}
-          smooth={true}
-        >Home</Link>
-        <Line
+        <Link activeClass="active" to="heroSection" spy={true} smooth={true}>
+          Home
+        </Link>
+        {/* <Line
           transition={{ duration: 0.75 }}
-          initial={{ width: "10%" }}
+          initial={{ width: "0%" }}
           animate={{ width: homeStatus === true ? "100%" : "0%" }}
-        />
+        /> */}
       </li>
       <li>
         <Link activeClass="active" to="projects" spy={true} smooth={true}>
           Work
         </Link>
-        <Line
+        {/* <Line
           transition={{ duration: 0.75 }}
           initial={{ width: "0%" }}
           animate={{ width: workStatus === true ? "100%" : "0%" }}
-        />
+        /> */}
       </li>
       {/* <li>
         <Link activeClass="active" to="About" spy={true} smooth={true}>
@@ -47,11 +43,11 @@ const NavLinks = () => {
         <Link activeClass="active" to="contactPage" spy={true} smooth={true}>
           Contact
         </Link>
-        <Line
+        {/* <Line
           transition={{ duration: 0.75 }}
           initial={{ width: "0%" }}
           animate={{ width: contactStatus === true ? "100%" : "0%" }}
-        />
+        /> */}
       </li>
       <li>
         <Link activeClass="active" to="home" spy={true} smooth={true}>
@@ -75,6 +71,12 @@ const NavWrapper = styled.ul`
     :last-child {
       color: var(--accent-color) !important;
     }
+  }
+  .active {
+    color: #00915c;
+    font-weight: 600;
+    border-bottom: 2px solid #00915c;
+    padding: 0 0 0.5rem 0;
   }
 `;
 

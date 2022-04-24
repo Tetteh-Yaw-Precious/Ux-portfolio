@@ -87,7 +87,7 @@ const {setWorkStatus} = useContext(NavLinksContext)
 };
 const StyledWork = styled(motion.section)`
   width: 100%;
-  min-height: 100rem;
+  min-height: 120vh;
   padding-left: 15%;
   padding-right: 15%;
   padding-top: 5%;
@@ -102,7 +102,8 @@ const StyledWork = styled(motion.section)`
   @media ${device.tab_port} {
     padding-left: 5%;
     padding-right: 5%;
-    padding-top: 15%;
+    padding-top: 10%;
+    padding-bottom: 4rem;
   }
   @media ${device.phone} {
     padding-left: 5%;

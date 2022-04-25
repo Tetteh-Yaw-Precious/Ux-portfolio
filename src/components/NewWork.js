@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { device, rem } from "../helpers/mixins";
 import { UseScroll } from "./useScroll";
 import { motion } from "framer-motion";
-import CaseStudy2 from "./caseStudyv2";
 //context
 import { NavLinksContext } from "../contexts/NavlinksContext";
 

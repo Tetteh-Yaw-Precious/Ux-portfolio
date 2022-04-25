@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 //importing components
 import { rem, device } from "../helpers/mixins";
 import NavLinks from "./NavLinks";
@@ -11,8 +11,12 @@ import { NavLinksContext } from "../contexts/NavlinksContext";
 
 const Nav = () => {
   const { navStatus } = useContext(NavLinksContext);
+  const navRef = useRef(null);
+  const closeNav = (e) => {
+    console.log(e.target);
+  };
   return (
-    <NavigationBar className="activeNav">
+    <NavigationBar className="activeNav" ref={navRef} onClick={closeNav}>
       <div className={`navbar ${navStatus === true ? "activeNav" : ""}`}>
         <img src={brandLogo} alt="my-logo" />
         <NavLinks />

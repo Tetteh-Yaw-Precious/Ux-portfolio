@@ -1,26 +1,41 @@
-import React, { useContext } from "react";
+import React, { useRef, useEffect } from "react";
 import { Link } from "react-scroll/modules";
 import styled from "styled-components";
 import { rem, device } from "../helpers/mixins";
 
 //importing Framer motion
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 //Context
-import { NavLinksContext } from "../contexts/NavlinksContext";
+// import { NavLinksContext } from "../contexts/NavlinksContext";
 
 const NavLinks = () => {
-  const { workStatus, homeStatus, contactStatus } = useContext(NavLinksContext);
+  // const { workStatus, homeStatus, contactStatus } = useContext(NavLinksContext);
   //test
-  return (
-    <NavWrapper>
+  const navListRef = useRef(null);
+  useEffect(() => {
+    console.log(navListRef);
+  }, [navListRef]);
+
+  const navClose = (e) => {
+    console.log(e.target.current);
+  };
+
+  return (  // const { workStatus, homeStatus, contactStatus } = useContext(NavLinksContext);
+    <NavWrapper onClick={navClose}>
       <li>
-        <Link activeClass="active" to="heroSection" spy={true} smooth={true}>
+        <Link
+          activeClass="active"
+          to="heroSection"
+          spy={true}
+          smooth={true}
+          ref={navListRef}
+        >
           Home
         </Link>
         {/* <Line
           transition={{ duration: 0.75 }}
-          initial={{ width: "0%" }}
+          initial={{ width: "0  // const { workStatus, homeStatus, contactStatus } = useContext(NavLinksContext);%" }}
           animate={{ width: homeStatus === true ? "100%" : "0%" }}
         /> */}
       </li>
@@ -74,19 +89,18 @@ const NavWrapper = styled.ul`
   }
   .active {
     color: #00915c;
-    font-weight: 600;
     border-bottom: 2px solid #00915c;
     padding: 0 0 0.5rem 0;
   }
 `;
 
-const Line = styled(motion.div)`
-  height: 0.2rem;
-  background: var(--accent-color);
-  width: 0%;
-  position: absolute;
-  bottom: -30%;
-  left: -2%;
-`;
+// const Line = styled(motion.div)`
+//   height: 0.2rem;
+//   background: var(--accent-color);
+//   width: 0%;
+//   position: absolute;
+//   bottom: -30%;
+//   left: -2%;
+// `;
 
 export default NavLinks;

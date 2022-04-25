@@ -52,7 +52,7 @@ const HeroSection = () => {
           <motion.p variants={titleAnim}>
             Hi, call me Yaw, that’s the name given to a male child born on
             thursday in Ghana, as a <br />
-            proud Yaw I love adventure and I thrive in strking a balance between
+            proud Yaw I love adventure and I thrive in striking a balance between
             clean and <br />
             considered outcomes that breathe life into product.
           </motion.p>

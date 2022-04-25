@@ -17,13 +17,13 @@ import { v4 as uuid } from "uuid";
 import { FaArrowRight } from "react-icons/fa";
 
 const NewWork = () => {
-  const { setWorkStatus } = useContext(NavLinksContext);
+  const { workStatus, setWorkStatus } = useContext(NavLinksContext);
   const [element, controls, view] = UseScroll();
-  // console.log(workStatus);
 
-  useEffect(() => {
-    setWorkStatus(view);
-  });
+  // useEffect(() => {
+  //   setWorkStatus(view);
+  //   console.log(workStatus);
+  // });
 
   return (
     <StyledWork id="projects" animate={controls} ref={element}>
@@ -37,7 +37,7 @@ const NewWork = () => {
           key={uuid()}
           caseStudyDetail={`
           Seguah Bookswap is a platform that aims at bringing all and sundry
-          who love reading and the creative arts together, together we aim at
+          who love reading and the creative arts  console.log(workStatus); together, together we aim at
           creating a community of book lovers by donating , buying and
           swapping of books within Accra and Ghana as a whole.
       `}

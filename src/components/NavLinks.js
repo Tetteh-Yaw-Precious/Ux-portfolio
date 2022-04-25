@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-scroll/modules";
 import styled from "styled-components";
 import { rem, device } from "../helpers/mixins";
@@ -7,29 +7,43 @@ import { rem, device } from "../helpers/mixins";
 // import { motion } from "framer-motion";
 
 //Context
-// import { NavLinksContext } from "../contexts/NavlinksContext";
+import { NavLinksContext } from "../contexts/NavlinksContext";
 
 const NavLinks = () => {
-  // const { workStatus, homeStatus, contactStatus } = useContext(NavLinksContext);
-  //test
-  const navListRef = useRef(null);
-  useEffect(() => {
-    console.log(navListRef);
-  }, [navListRef]);
+  const { setWorkStatus, setNavStatus, navStatus } =
+    useContext(NavLinksContext);
 
-  const navClose = (e) => {
-    console.log(e.target.current);
-  };
+  //setting homeStatus
+  function settingHomeStatus() {
+    if (window.innerWidth <= 600) {
+      setNavStatus(!navStatus);
+    }
+  }
 
-  return (  // const { workStatus, homeStatus, contactStatus } = useContext(NavLinksContext);
-    <NavWrapper onClick={navClose}>
+  //setting workstatus
+  function settingWorkStat(passLinkState, passNavState) {
+    if (window.innerWidth <= 600) {
+      setWorkStatus(true);
+      setNavStatus(!navStatus);
+    }
+  }
+
+  //setting homeStatus
+  function settingContactStatus() {
+    if (window.innerWidth <= 600) {
+      setNavStatus(!navStatus);
+    }
+  }
+
+  return (
+    <NavWrapper>
       <li>
         <Link
           activeClass="active"
           to="heroSection"
           spy={true}
           smooth={true}
-          ref={navListRef}
+          onClick={settingHomeStatus}
         >
           Home
         </Link>
@@ -40,7 +54,13 @@ const NavLinks = () => {
         /> */}
       </li>
       <li>
-        <Link activeClass="active" to="projects" spy={true} smooth={true}>
+        <Link
+          activeClass="active"
+          to="projects"
+          spy={true}
+          smooth={true}
+          onClick={settingWorkStat}
+        >
           Work
         </Link>
         {/* <Line
@@ -55,7 +75,13 @@ const NavLinks = () => {
         </Link>
       </li> */}
       <li>
-        <Link activeClass="active" to="contactPage" spy={true} smooth={true}>
+        <Link
+          activeClass="active"
+          to="contactPage"
+          spy={true}
+          smooth={true}
+          onClick={settingContactStatus}
+        >
           Contact
         </Link>
         {/* <Line

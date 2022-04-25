@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
 import styled from "styled-components";
 import { device, rem } from "../helpers/mixins";
 import { UseScroll } from "./useScroll";
 import { motion } from "framer-motion";
-//context
-import { NavLinksContext } from "../contexts/NavlinksContext";
 
 import CaseStudy from "./caseStudy";
 import CaseStudyv2 from "./caseStudyv2";

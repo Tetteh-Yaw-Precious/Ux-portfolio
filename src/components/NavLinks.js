@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-scroll/modules";
 import styled from "styled-components";
 import { rem, device } from "../helpers/mixins";

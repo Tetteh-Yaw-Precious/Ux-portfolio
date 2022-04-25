@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { device, rem } from "../helpers/mixins";
 import { UseScroll } from "./useScroll";
@@ -17,8 +17,8 @@ import { v4 as uuid } from "uuid";
 import { FaArrowRight } from "react-icons/fa";
 
 const NewWork = () => {
-  const { workStatus, setWorkStatus } = useContext(NavLinksContext);
-  const [element, controls, view] = UseScroll();
+  // const { workStatus, setWorkStatus } = useContext(NavLinksContext);
+  const [element, controls] = UseScroll();
 
   // useEffect(() => {
   //   setWorkStatus(view);

@@ -115,7 +115,7 @@ const NavWrapper = styled.ul`
   }
   .active {
     color: #00915c;
-    border-bottom: 2px solid #00915c;
+    /* border-bottom: 2px solid #00915c; */
     padding: 0 0 0.5rem 0;
   }
 `;

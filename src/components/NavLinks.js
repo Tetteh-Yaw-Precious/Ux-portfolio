@@ -91,9 +91,13 @@ const NavLinks = () => {
         /> */}
       </li>
       <li>
-        <Link activeClass="active" to="home" spy={true} smooth={true}>
-          Download CV
-        </Link>
+        <a
+          href="https://drive.google.com/file/d/1aZdOv1lWv2oKE_YlO6zSITZUv55GAAhh/view"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          My Resume
+        </a>
       </li>
     </NavWrapper>
   );
@@ -111,6 +115,18 @@ const NavWrapper = styled.ul`
     position: relative;
     :last-child {
       color: var(--accent-color) !important;
+    }
+    :last-child {
+      text-decoration: none !important;
+      color: var(--accent-color);
+      a {
+        text-decoration: none;
+        font-weight: 400;
+        color: var(--text-black);
+        &:hover {
+          color: #00915c;
+        }
+      }
     }
   }
   .active {

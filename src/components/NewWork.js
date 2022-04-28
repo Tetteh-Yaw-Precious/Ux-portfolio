@@ -34,7 +34,7 @@ const NewWork = () => {
           key={uuid()}
           caseStudyDetail={`
           Seguah Bookswap is a platform that aims at bringing all and sundry
-          who love reading and the creative arts  console.log(workStatus); together, together we aim at
+          who love reading and the creative arts, together we aim at
           creating a community of book lovers by donating , buying and
           swapping of books within Accra and Ghana as a whole.
       `}

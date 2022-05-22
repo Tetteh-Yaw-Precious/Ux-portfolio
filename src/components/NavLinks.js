@@ -4,35 +4,54 @@ import styled from "styled-components";
 import { rem, device } from "../helpers/mixins";
 
 //importing Framer motion
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 //Context
 import { NavLinksContext } from "../contexts/NavlinksContext";
 
 const NavLinks = () => {
-  const { setWorkStatus, setNavStatus, navStatus } =
-    useContext(NavLinksContext);
+  const {
+    setWorkStatus,
+    setNavStatus,
+    navStatus,
+    workStatus,
+    homeStatus,
+    setHomeStatus,
+    contactStatus,
+    setContactStatus,
+  } = useContext(NavLinksContext);
 
-  //setting homeStatus
-  function settingHomeStatus() {
+   const settingHomeStatus = () => {
     if (window.innerWidth <= 600) {
       setNavStatus(!navStatus);
     }
-  }
+    setHomeStatus(true);
+    setWorkStatus(false);
+    setContactStatus(false);
+  };
 
   //setting workstatus
-  function settingWorkStat(passLinkState, passNavState) {
+   function settingWorkStat(passLinkState, passNavState) {
     if (window.innerWidth <= 600) {
       setWorkStatus(true);
       setNavStatus(!navStatus);
     }
+    if (workStatus === false) {
+      setWorkStatus(true);
+      setHomeStatus(false);
+      setContactStatus(false);
+      console.log("new");
+    }
   }
 
   //setting homeStatus
-  function settingContactStatus() {
+   function settingContactStatus() {
     if (window.innerWidth <= 600) {
       setNavStatus(!navStatus);
     }
+    setHomeStatus(false);
+    setWorkStatus(false);
+    setContactStatus(true);
   }
 
   return (
@@ -47,11 +66,11 @@ const NavLinks = () => {
         >
           Home
         </Link>
-        {/* <Line
+        <Line
           transition={{ duration: 0.75 }}
-          initial={{ width: "0  // const { workStatus, homeStatus, contactStatus } = useContext(NavLinksContext);%" }}
+          initial={{ width: "0%" }}
           animate={{ width: homeStatus === true ? "100%" : "0%" }}
-        /> */}
+        />
       </li>
       <li>
         <Link
@@ -63,11 +82,11 @@ const NavLinks = () => {
         >
           Work
         </Link>
-        {/* <Line
+        <Line
           transition={{ duration: 0.75 }}
           initial={{ width: "0%" }}
           animate={{ width: workStatus === true ? "100%" : "0%" }}
-        /> */}
+        />
       </li>
       {/* <li>
         <Link activeClass="active" to="About" spy={true} smooth={true}>
@@ -84,11 +103,11 @@ const NavLinks = () => {
         >
           Contact
         </Link>
-        {/* <Line
+        <Line
           transition={{ duration: 0.75 }}
           initial={{ width: "0%" }}
           animate={{ width: contactStatus === true ? "100%" : "0%" }}
-        /> */}
+        />
       </li>
       <li>
         <a
@@ -136,13 +155,13 @@ const NavWrapper = styled.ul`
   }
 `;
 
-// const Line = styled(motion.div)`
-//   height: 0.2rem;
-//   background: var(--accent-color);
-//   width: 0%;
-//   position: absolute;
-//   bottom: -30%;
-//   left: -2%;
-// `;
+const Line = styled(motion.div)`
+  height: 0.2rem;
+  background: var(--accent-color);
+  width: 0%;
+  position: absolute;
+  bottom: -30%;
+  left: -2%;
+`;
 
 export default NavLinks;

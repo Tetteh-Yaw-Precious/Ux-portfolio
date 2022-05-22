@@ -12,11 +12,8 @@ import { NavLinksContext } from "../contexts/NavlinksContext";
 const Nav = () => {
   const { navStatus } = useContext(NavLinksContext);
   const navRef = useRef(null);
-  const closeNav = (e) => {
-    console.log(e.target);
-  };
   return (
-    <NavigationBar className="activeNav" ref={navRef} onClick={closeNav}>
+    <NavigationBar className="activeNav" ref={navRef}>
       <div className={`navbar ${navStatus === true ? "activeNav" : ""}`}>
         <img src={brandLogo} alt="my-logo" />
         <NavLinks />

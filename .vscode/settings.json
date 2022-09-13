@@ -1,7 +1,3 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#41271C",
-        "titleBar.activeBackground": "#5B3628",
-        "titleBar.activeForeground": "#FCF9F8"
-    }
+	"marquee.widgets.npm-stats.packageNames": ["ux-portfolio"]
 }

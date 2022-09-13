@@ -4,9 +4,9 @@ import { UseScroll } from "./useScroll";
 import { motion } from "framer-motion";
 
 import CaseStudy from "./caseStudy";
-import CaseStudyv2 from "./caseStudyv2";
+import CaseStudyv2 from "./CaseStudyv2";
+import CaseStudyN from "./caseStudyN";
 import seguahBookswap from "../assets/images/seguah.jpg";
-
 import WestPort from "../assets/images/Westport.jpg";
 import SeguahBrand from "../assets/images/brandingSeguah.png";
 //import uuid v4
@@ -29,6 +29,20 @@ const NewWork = () => {
 				<hr />
 			</div>
 			<div className="caseStudyCt">
+				<CaseStudy
+					coverImg={WestPort}
+					caseStudyDetail={`
+          Designed and Developed a web application that helps the managers of  Wesport Petroleum
+          take control of day to day operations by keeping track of sale stocks
+           that they sell.
+    `}
+					caseStudyName={
+						"1. WestPort Petroleum Product Design/Development"
+					}
+					weblink="https://www.behance.net/gallery/142086471/WestPort-Petroluem-MDashboard-Case-Study"
+					mvplink="https://westportpetroleum.netlify.app/"
+					arrow={<FaArrowRight className="arrow" />}
+				/>
 				<CaseStudyv2
 					coverImg={seguahBookswap}
 					key={uuid()}
@@ -38,31 +52,17 @@ const NewWork = () => {
           creating a community of book lovers by donating , buying and
           swapping of books within Accra and Ghana as a whole.
       `}
-					caseStudyName={"1. Seguah Bookswap UI/UX"}
+					caseStudyName={"2. Seguah Bookswap UX/UI"}
 					weblink="https://www.behance.net/gallery/142178211/Seguah-Bookswap"
 					arrow={<FaArrowRight className="arrow" />}
 				/>
-				<CaseStudy
-					coverImg={WestPort}
-					caseStudyDetail={`
-          A web application that helps the managers of  Wesport Petroleum
-          take control of day to day operations by keeping track of sale stocks
-           that they sell.
-    `}
-					caseStudyName={
-						"2. WestPort Petroleum Product Design/Development"
-					}
-					weblink="https://www.behance.net/gallery/142086471/WestPort-Petroluem-MDashboard-Case-Study"
-					arrow={<FaArrowRight className="arrow" />}
-				/>
-				<CaseStudyv2
+
+				<CaseStudyN
 					coverImg={SeguahBrand}
-					caseStudyDetail={`
-          Seguah Bookswap is a platform that aims at bringing all and sundry
+					caseStudyDetail={`Seguah Bookswap is a platform that aims at bringing all and sundry
           who love reading and the creative arts together, together we aim at
           creating a community of book lovers by donating , buying and
-          swapping of books within Accra and Ghana as a whole.
-      `}
+          swapping of books within Accra and Ghana as a whole.`}
 					caseStudyName={"3. Bookswap Brand Design"}
 					weblink="https://www.behance.net/gallery/142190819/Seguah-Bookswap-Brand-Identity"
 					arrow={<FaArrowRight className="arrow" />}

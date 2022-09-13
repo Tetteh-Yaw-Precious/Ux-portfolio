@@ -10,12 +10,12 @@ import {
 	nameAnimation,
 } from "../animations/animation";
 
-const caseStudy = ({
+const CaseStudyN = ({
 	weblink,
 	caseStudyName,
 	caseStudyDetail,
 	coverImg,
-	mvplink,
+	arrow,
 }) => {
 	return (
 		<StyledCaseStudy
@@ -35,30 +35,14 @@ const caseStudy = ({
             swapping of books within Accra and Ghana as a whole */}
 						{caseStudyDetail}
 					</motion.p>
-					<ul className="techStack">
-						<p>
-							<span>TechStack:</span> React, SCSS,TailwindCSS,
-							Context API,Google Firebase, Framer Motion
-						</p>
-					</ul>
-					<div className="linkContainer">
-						<motion.a
-							href={weblink}
-							target="_blank"
-							rel="noreferrer"
-							variants={titleAnim}
-						>
-							Read case study
-						</motion.a>{" "}
-						<motion.a
-							href={mvplink}
-							target="_blank"
-							rel="noreferrer"
-							variants={titleAnim}
-						>
-							View MVP
-						</motion.a>
-					</div>
+					<motion.a
+						href={weblink}
+						target="_blank"
+						rel="noreferrer"
+						variants={titleAnim}
+					>
+						Read case study <span>{arrow}</span>
+					</motion.a>
 				</div>
 			</div>
 			<div className="cover">
@@ -102,49 +86,25 @@ const StyledCaseStudy = styled(motion.section)`
 			display: flex;
 			flex-direction: column;
 			gap: ${rem(10)};
-
 			@media ${device.phone} {
 			}
 
 			h6 {
-				color: hsla(231, 91%, 21%, 1);
+				color: hsla(294, 49%, 30%, 1);
 				font-weight: 600;
 				font-family: var(--primary-font);
 			}
-			.linkContainer {
+			a {
+				cursor: pointer;
+				color: hsla(231, 91%, 21%, 1);
 				display: flex;
-				width: 60%;
-				justify-content: space-between;
-				a {
-					cursor: pointer;
-					color: hsla(231, 91%, 21%, 1);
-					display: flex;
-					gap: 0.5rem;
-					color: #030392;
-					text-decoration: underline;
-					font-size: 1rem;
-					span {
-						.arrow {
-							font-size: 1.1rem;
-							color: var(--case-study-link-color);
-						}
+				gap: 0.5rem;
+				color: var(--case-study-link-color);
+				span {
+					.arrow {
+						font-size: 1.1rem;
+						color: var(--case-study-link-color);
 					}
-				}
-			}
-			.techStack {
-				display: flex;
-				justify-content: space-between;
-				padding: 1rem 0rem;
-				p {
-					span {
-						font-weight: 900;
-						font-size: 1rem;
-					}
-					font-style: italic;
-					font-size: 1rem;
-					font-weight: 500;
-					width: 100%;
-					color: var(--case-study-link-color);
 				}
 			}
 		}
@@ -157,4 +117,4 @@ const StyledCaseStudy = styled(motion.section)`
 	}
 `;
 
-export default caseStudy;
+export default CaseStudyN;
